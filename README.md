@@ -7,6 +7,8 @@ A Visual Studio Code extension for .ra files featuring syntax highlighting and c
 - Comment toggling with Ctrl+/
 - Custom operator and assignment highlighting
 
+![RA Syntax Preview](assets/image.png)  
+
 ## Installation
 
 ### Install from VSIX
