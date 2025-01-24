@@ -12,7 +12,7 @@ A Visual Studio Code extension for .ra files featuring syntax highlighting and c
 ## Installation
 
 ### Install from VSIX
-1. Download the `.vsix` file from releases
+1. Download the `.vsix` file in the repositry (`ra-syntax-highlight-0.0.1.vsix`)
 2. Open VSCode
 3. Press Ctrl+Shift+P and type "Install from VSIX"
 4. Select the downloaded file
