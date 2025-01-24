@@ -1,0 +1,39 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ra",
+	"patterns": [
+		{
+			"match": "\\b(LOAD|LIST|PRINT|RENAME|EXPORT|CLEAR|QUIT|INDEX|CROSS|PROJECTION|SELECT|DISTINCT|JOIN|SORT|SOURCE|FROM|TO|ON|BY|IN|USING|BTREE|HASH|NOTHING|ASC|DESC|PROJECT)\\b",
+			"name": "keyword.control.ra"
+		},
+		{
+			"match": ">=|<=|=>|=<|==|!=|>|<",
+			"name": "keyword.operator.comparison.ra" 
+		},
+		{
+			"match": "<-",
+            "name": "entity.name.function.ra"
+		},
+		{
+			"match": "#.*$",
+			"name": "comment.line.number-sign.ra"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"strings": {
+			"name": "string.quoted.double.ra",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ra",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.ra"
+ }

@@ -1,0 +1,69 @@
+{
+  "name": "ra-syntax-highlight",
+  "displayName": "RA Syntax Highlight",
+  "description": "Extension in VSCode for highlighting .ra extension files (support for comments)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:ra"
+  ],
+  
+  "semanticTokenColors": {
+    "entity.name.function.ra": "#FFD700"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ra",
+        "aliases": [
+          "ra",
+          "ra"
+        ],
+        "extensions": [
+          ".ra"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ra",
+        "scopeName": "source.ra",
+        "path": "./syntaxes/ra.tmLanguage.json"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "ra.toggleComment",
+        "key": "ctrl+/",
+        "when": "editorTextFocus && editorLangId == 'ra'"
+      }
+    ],
+    "commands": [
+      {
+        "command": "ra.toggleComment",
+        "title": "Toggle Comment"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.125",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^5.x.x",
+    "@typescript-eslint/parser": "^5.x.x",
+    "eslint": "^8.x.x",
+    "typescript": "^4.9.5"
+  }
+}
